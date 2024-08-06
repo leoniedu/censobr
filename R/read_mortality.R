@@ -53,7 +53,7 @@ read_mortality <- function(year = 2010,
       }
 
   ### Get url
-  file_url <- paste0("https://github.com/ipeaGIT/censobr/releases/download/",
+  file_url <- paste0(censobr_env$censobr_release_url,
                      censobr_env$data_release, "/", year, "_mortality_",
                      censobr_env$data_release, ".parquet")
 
