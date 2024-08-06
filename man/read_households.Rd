@@ -54,6 +54,7 @@ df <- read_households(year = 2010,
 }
 \seealso{
 Other Microdata: 
+\code{\link{read_cnefe}()},
 \code{\link{read_emigration}()},
 \code{\link{read_families}()},
 \code{\link{read_mortality}()},

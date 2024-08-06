@@ -4,8 +4,9 @@ censobr_env <- new.env(parent = emptyenv()) # nocov start
 .onLoad <- function(libname, pkgname){
 
   # data release
-  censobr_env$data_release <- 'v0.3.0'
-  censobr_env$censobr_release_url <- "https://github.com/ipeaGIT/censobr/releases/download/"
+  censobr_env$data_release <- 'v0.3.0.1'
+  #censobr_env$censobr_release_url <- "https://github.com/ipeaGIT/censobr/releases/download/"
+  censobr_env$censobr_release_url <- "https://github.com/leoniedu/censobr/releases/download/"
   # local cache dir
   cache_d <- paste0('censobr/data_release_', censobr_env$data_release)
   censobr_env$cache_dir <- tools::R_user_dir(cache_d, which = 'cache')

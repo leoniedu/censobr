@@ -64,6 +64,7 @@ df <- read_emigration(year = 2010,
 }
 \seealso{
 Other Microdata: 
+\code{\link{read_cnefe}()},
 \code{\link{read_families}()},
 \code{\link{read_households}()},
 \code{\link{read_mortality}()},
