@@ -16,6 +16,7 @@ cachedir <- censobr:::censobr_env$cache_dir
 
 ftp <- "https://ftp.ibge.gov.br/Cadastro_Nacional_de_Enderecos_para_Fins_Estatisticos/Censo_Demografico_2022/Arquivos_CNEFE/UF/"
 
+
 h <- rvest::read_html(ftp)
 elements <- rvest::html_elements(h, "a")
 files <- rvest::html_attr(elements, "href")
@@ -102,6 +103,7 @@ process_batch <- function(data, pos) {
 library(readr)
 tempdir <- file.path(tempdir(), "cnefe", '2022')
 unlink(tempdir, recursive = TRUE)
+dest_files <- dest_files[file.exists(dest_files)]
 for (k in dest_files) {
   print(k)
   j <<- 0
