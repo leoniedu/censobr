@@ -127,6 +127,8 @@ for (j in states) {
     filter(code_state==j)%>%
     ungroup()%>%
     select(-partition)%>%
+    rename(code_tract_cnefe=code_tract)%>%
+    mutate(code_tract=substr(code_tract_cnefe,1,15))%>%
     write_parquet(file.path("data", paste0(year, "_cnefe_", j,"_v0.3.0.1.parquet")))
 }
 
