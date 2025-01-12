@@ -8,4 +8,6 @@ parquet_files <- list.files('./data/',
 
 piggyback::pb_upload(file = parquet_files,
                      repo = 'leoniedu/censobr',
-                     tag = 'v0.3.0.1')
+                     tag = 'v0.3.0.1'
+                     , overwrite = TRUE
+                     )

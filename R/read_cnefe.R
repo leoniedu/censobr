@@ -18,12 +18,12 @@
 #'                       showProgress = FALSE)
 #'
 #'
-read_cnefe <- function(year = 2022,
-                       code_state=29,
-                            columns = NULL,
-                            as_data_frame = FALSE,
-                            showProgress = TRUE,
-                            cache = TRUE){
+read_cnefe <- function(code_state=29,
+                       year = 2022,
+                       columns = NULL,
+                       as_data_frame = FALSE,
+                       showProgress = TRUE,
+                       cache = TRUE) {
 
   ### check inputs
   checkmate::assert_numeric(year)
@@ -35,7 +35,7 @@ read_cnefe <- function(year = 2022,
   if (isFALSE(year %in% years)) { stop(paste0("Error: Data currently only available for the years ",
                                              paste(years, collapse = " ")))}
 
-  code_states <- c(29)
+  code_states <- c(11, 28, 29, 31)
   if (isFALSE(code_state %in% code_states)) { stop(paste0("Error: Data currently only available for the state code ",
                                               paste(code_states, collapse = " ")))}
 
