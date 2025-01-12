@@ -59,7 +59,7 @@ read_emigration <- function(year = 2010,
                               cache = cache)
 
   # check if download worked
-  if(is.null(local_file)) { return(NULL) }
+  if(is.null(local_file)) { return(invisible(NULL)) }
 
   ### read data
   df <- arrow_open_dataset(local_file)
@@ -87,8 +87,8 @@ read_emigration <- function(year = 2010,
   ### output format
   if (isTRUE(as_data_frame)) { return( dplyr::collect(df) )
   } else {
-      return(df)
-    }
+    return(df)
+  }
 
 }
 

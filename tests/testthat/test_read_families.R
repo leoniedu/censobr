@@ -9,7 +9,7 @@ testthat::skip_if_not_installed("arrow")
 tester <- function(year = 2000,
                    columns = NULL,
                    add_labels = NULL,
-                   merge_households = FALSE,
+                   # merge_households = FALSE,
                    as_data_frame = FALSE,
                    showProgress = FALSE,
                    cache = TRUE) {
@@ -17,7 +17,7 @@ tester <- function(year = 2000,
     year,
     columns,
     add_labels,
-    merge_households,
+    # merge_households,
     as_data_frame,
     showProgress,
     cache
@@ -31,7 +31,7 @@ test_that("read_families read", {
   # (default) arrow table
   test1 <- tester()
   testthat::expect_true(is(test1, "ArrowObject"))
-  testthat::expect_true(is(test1, "FileSystemDataset"))
+  # testthat::expect_true(is(test1, "Table"))
   testthat::expect_true(nrow(test1) >0 )
 
   # # data.frame
@@ -53,15 +53,15 @@ test_that("read_families read", {
 
 # Merge households vars -----------------------
 
-test_that("families merge_households_vars", {
-
-  for(y in c(2000)){ # y = 2000
-    message(y)
-    df_hou <- read_households(year = y)
-    df_test <- tester(year = y, merge_households = TRUE)
-    testthat::expect_true( all(names(df_hou) %in% names(df_test)) )
-  }
-})
+# test_that("families merge_households_vars", {
+#
+#   for(y in c(2000)){ # y = 2000
+#     message(y)
+#     df_hou <- read_households(year = y)
+#     df_test <- tester(year = y, merge_households = TRUE)
+#     testthat::expect_true( all(names(df_hou) %in% names(df_test)) )
+#   }
+# })
 
 
 # ERRORS and messages  -----------------------

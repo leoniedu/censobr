@@ -1,7 +1,7 @@
 Type: Package
 Package: censobr
 Title: Download Data from Brazil's Population Census
-Version: 0.3.29999
+Version: 0.4.0999
 Authors@R: 
     c(person(given="Rafael H. M.", family="Pereira", 
              email="rafa.pereira.br@gmail.com", 
@@ -19,27 +19,31 @@ Authors@R:
              role=c("ctb")),
       person(given = "Ipea - Institute for Applied Economic Research",
              role = c("cph", "fnd")))
-Description: Download data from Brazil's population census. The package is built 
-             on top of the 'Arrow' platform <https://arrow.apache.org/docs/r/>, 
-             which allows users to work with larger-than-memory census data using 
-             'dplyr' familiar functions. <https://arrow.apache.org/docs/r/articles/arrow.html#analyzing-arrow-data-with-dplyr>.
+Description: Easy access to data from Brazil's population censuses. The package
+             provides a simple and efficient way to download and read the data 
+             sets and the documentation of all the population censuses taken in 
+             and after 1960 in the country. The package is built on top of the 
+             'Arrow' platform <https://arrow.apache.org/docs/r/>,  which allows 
+             users to work with larger-than-memory census data using 'dplyr' 
+             familiar functions. <https://arrow.apache.org/docs/r/articles/arrow.html#analyzing-arrow-data-with-dplyr>.
 License: MIT + file LICENSE
 URL: https://github.com/ipeaGIT/censobr, https://ipeagit.github.io/censobr/
 BugReports: https://github.com/ipeaGIT/censobr/issues
 Depends: 
-    R (>= 4.0)
+    R (>= 4.1.0)
 Imports:
     arrow (>= 15.0.1),
     checkmate,
+    curl (>= 5.0.0),
+    DBI,
     dplyr,
-    duckplyr,
-    httr (>= 1.4.1),
+    duckdb,
+    fs,
     tools
 Suggests:
     covr,
-    DBI,
     dbplyr,
-    duckdb,
+    duckplyr,
     geobr,
     ggplot2 (>= 3.3.1),
     rmarkdown,

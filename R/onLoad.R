@@ -9,7 +9,7 @@ censobr_env <- new.env(parent = emptyenv()) # nocov start
   censobr_env$censobr_release_url <- "https://github.com/leoniedu/censobr/releases/download/"
   # local cache dir
   cache_d <- paste0('censobr/data_release_', censobr_env$data_release)
-  censobr_env$cache_dir <- tools::R_user_dir(cache_d, which = 'cache')
+  censobr_env$cache_dir <- fs::path(tools::R_user_dir(cache_d, which = 'cache'))
   # gsub("\\\\", "/", censobr_env$cache_dir)
 
   ## delete any files from old data releases
